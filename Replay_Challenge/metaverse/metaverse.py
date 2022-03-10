@@ -26,7 +26,7 @@ def process_input_file(fname):
         raw_lines = f.readlines()
         lines = [line.strip() for line in raw_lines]
         T = int(lines[0])
-        with open("output.txt", "w", encoding='utf8') as outf:
+        with open("input-metaverse-c1b4_output.txt", "w", encoding='utf8') as outf:
             for i in range(T):
                 N = int(lines[(i * 2) + 1].split()[0])
                 M = int(lines[(i * 2) + 1].split()[1])
@@ -38,4 +38,4 @@ def process_input_file(fname):
                 outf.write("Case #{}: {}".format(i + 1, concurr))
                 outf.write('\n')
             
-process_input_file("data.txt")
+process_input_file("input-metaverse-c1b4.txt")
