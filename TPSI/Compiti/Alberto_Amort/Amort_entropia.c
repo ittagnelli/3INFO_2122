@@ -16,7 +16,7 @@ struct {
 
 int main() {
     char parola[lunghezza + 1];
-    printf("Inserisci una parola");
+    printf("Inserisci una parola: ");
     scanf("%20s", parola);
 
     float num_simboli = strlen(parola);
@@ -46,6 +46,7 @@ int main() {
             }
             
             H=calcolo_entropia(num_simboli, occur);
+
         }
 
         
@@ -56,17 +57,15 @@ printf("H(%s)=%f bit/s", parola, H);
 int calcolo_entropia (float num_simboli, float occur) 
 { float I;
     I=calcolo_frequenza(num_simboli, occur);
-    simbolo1.H+=I; 
-    printf("H :%f bit/s \n", simbolo1.H);   
-    return simbolo1.H;
+    simbolo1.H=simbolo1.H+I; 
 }
 
 float calcolo_frequenza(float num_simboli, float occur) 
 {
+    float I;
     simbolo1.Pi=occur/ num_simboli;
     simbolo1.I=-(log10(simbolo1.Pi)/log10(2));
-    printf(" %.3f\n", simbolo1.I);
-    return simbolo1.I;
+    I=simbolo1.I*simbolo1.Pi;
 
 }
 
