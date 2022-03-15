@@ -3,36 +3,32 @@
 #include<math.h>
 #include<ctype.h>
 
-struct info
+double entropia(int n_lettere, int frequenza[n_lettere], float Pi[n_lettere])
 {
-    char lettera;
-    int frequenza;
-    float Pi;
-    float I;
-};
-
+    double hs=0;                             
+    for (int i = 1; i <= n_lettere; i++)
+    {
+        hs += (-1) * (Pi[i-1] * log2(Pi[i-1]));
+    }
+    return(hs);
+}
 
 void main()
 {
-int hs =0;
-char parola[20];
 
-printf ("\n\nInserire la parola:\t");
-scanf ("%s", parola);
+char sequenza[20];
 
-int i, y, k=0, l = strlen(parola);
-int lettere[20] = {0}, cont_let=0;
+printf ("\nInserire la sequenza di lettere :\n");       
+scanf ("%s", sequenza);
 
-for (i=0;i<l;i++)
-{
-    parola[i] = tolower(parola[i]);
-}
+int i, y, k=0, l = strlen(sequenza);
+int lettere[20] = {0}, count=0;
 
 for (i=0; i<20; i++)
 {
-    for (y=0; parola[y] != 0; y++)
+    for (y=0; sequenza[y] != 0; y++)
     {
-        if (parola[y] == i+97)
+        if (sequenza[y] == i+97)
         {
             lettere[i]++;
         }
@@ -43,30 +39,25 @@ for (i=0; i<20; i++)
 {
     if (lettere[i] != 0)
     {
-        cont_let++;
+        count++;
     }
 }
-struct info let[cont_let];
-
-float log2 = log(2);
+float Pi[count]; 
+int frequenza[count];
 
 for (i=0; i<20; i++)
 {
     if (lettere[i] != 0)
     {
-        let[k].lettera = i+97;
-        let[k].frequenza = lettere[i];
-        let[k].Pi = let[k].frequenza / (float)l;
-        let[k].I = (log(let[k].Pi) / log2) * (-1);
+        frequenza[k] = lettere[i];
+        Pi[k] = (float)frequenza[k] / (float)l;
         k++;
     }
 }
-for(int i=0; i<lettere[i]; i++)
-{
-    
-    hs= -(let[i].frequenza*(log(let[k].frequenza)/0,301));
- 
-}
 
-printf("l'entropia della parola %s e' %d", parola, hs);
+double hs = entropia(count, frequenza, Pi);
+
+printf ("\n\nH(%s) = %lf bit/sym", sequenza, hs);
+
+
 }
