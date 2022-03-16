@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+void main(){
+float pi;
+float I;
+float H;
+int parola;
+ int s, h,n;
+printf("Inserisci una parola:");
+scanf("%d", parola);
+for(int i=0;i<parola;i++){
+   for(int j=0;j<parola; j++) {
+}
+}
+}
