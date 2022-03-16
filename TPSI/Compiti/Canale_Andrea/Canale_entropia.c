@@ -9,7 +9,7 @@ void main()
  	int p=0;
 	 int u=0;
   	printf("Inserire i simboli:  ");
-  	gets(str);
+  	fgets(str,N,stdin);
   	float prob=0,qty=0,entropia=0;
 	  float ni=strlen(str);
 	  while(p!=ni){
