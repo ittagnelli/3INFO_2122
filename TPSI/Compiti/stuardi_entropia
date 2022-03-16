@@ -1,17 +1,11 @@
 #include <stdio.h>
-#define l 20
+
 void main(){
 float pi;
 float I;
 float H;
 int parola;
  int s, h,n;
- printf("Inserisci un valore");
-  scanf("%d", &s);
-  printf("Inserisci un valore");
-  scanf("%d", &n);
- 
-
 printf("Inserisci una parola:");
 scanf("%d", parola);
 for(int i=0;i<parola;i++){
