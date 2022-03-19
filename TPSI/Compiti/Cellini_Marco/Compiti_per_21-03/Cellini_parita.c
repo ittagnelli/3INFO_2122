@@ -1,5 +1,20 @@
 #include<stdio.h>
 #define n_bits 8        //inserire il numero di bits del codice
+void print(int n[n_bits], int x)
+{
+    printf ("\n\nIl bit di parita' pari e' %d e il codice finale e' --> ", x);
+    for (int i = 0; i < n_bits; i++)
+    {
+        printf ("%d", n[i]);
+    }
+    printf ("%d", x);
+    printf ("\n\nIl bit di parita' dispari e' %d e il codice finale e' --> ", !x);
+    for (int i = 0; i < n_bits; i++)
+    {
+        printf ("%d", n[i]);
+    }
+    printf ("%d", !x);
+}
 
 void parita(int n[n_bits])
 {
@@ -17,22 +32,6 @@ void parita(int n[n_bits])
     {
         print(n, 1);
     }
-}
-
-void print(int n[n_bits], int x)
-{
-    printf ("\n\nIl bit di parita' pari e' %d e il codice finale e' --> ", x);
-    for (int i = 0; i < n_bits; i++)
-    {
-        printf ("%d", n[i]);
-    }
-    printf ("%d", x);
-    printf ("\n\nIl bit di parita' dispari e' %d e il codice finale e' --> ", !x);
-    for (int i = 0; i < n_bits; i++)
-    {
-        printf ("%d", n[i]);
-    }
-    printf ("%d", !x);
 }
 
 void main()
