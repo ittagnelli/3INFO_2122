@@ -16,22 +16,6 @@ void print(int n[n_bits], int x)
     printf ("%d", !x);
 }
 
-void print(int n[n_bits], int x)
-{
-    printf ("\n\nIl bit di parita' pari e' %d e il codice finale e' --> ", x);
-    for (int i = 0; i < n_bits; i++)
-    {
-        printf ("%d", n[i]);
-    }
-    printf ("%d", x);
-    printf ("\n\nIl bit di parita' dispari e' %d e il codice finale e' --> ", !x);
-    for (int i = 0; i < n_bits; i++)
-    {
-        printf ("%d", n[i]);
-    }
-    printf ("%d", !x);
-}
-
 void parita(int n[n_bits])
 {
     int tot=0;
