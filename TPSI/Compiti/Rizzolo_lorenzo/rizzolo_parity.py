@@ -20,14 +20,14 @@ somma = som(parola,somma)
 if p_o_d == 'p' or p_o_d == 'P':
     if somma % 2 == 0:
         bit_par=0
-        print("il bit di parità per ") 
+        print("il bit di parità per ", end="") 
         stampa(parola,somma)
         print(" è ", bit_par)
         stampa(parola,somma)
         print(bit_par)
     else:
         bit_par=1
-        print("il bit di parità per ") 
+        print("il bit di parità per ", end="") 
         stampa(parola,somma)
         print(" è ", bit_par)
         stampa(parola,somma)
@@ -43,7 +43,7 @@ if p_o_d == 'd' or p_o_d == 'D':
         print(bit_par)
     else:
         bit_par=0
-        print("il bit di parità per ") 
+        print("il bit di parità per ", end="") 
         stampa(parola,somma)
         print(" è ", bit_par)
         stampa(parola,somma)
