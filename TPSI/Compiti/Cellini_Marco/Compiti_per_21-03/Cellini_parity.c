@@ -23,10 +23,10 @@ void dispari(int l, int totale, char *n)
 
 int controllo(char n[20])
 {
-    int no;
-    if (n[0] != 'P' && n[0] != 'D')
+    int no=0;
+    if (n[0] != 'P' && n[0] != 'D' || n[1] == '\0')
     {
-        printf ("\n\nInserimento errato, necessario specificare il tipo di parità (P|D)");
+        printf ("\n\nInserimento errato, necessario specificare il tipo di parita' (P|D); (perfavore non mettere spazi tra la lettera e il numero).");
         no++;
     }
     return(no);
@@ -42,13 +42,10 @@ int tot(int l, char *n)
     return(tot);
 }
 
-void main()
+void main(int argc, char *argv[])
 {
 
-char n[20];
-
-printf ("\n\nInserire P per la parita' pari, D per la parita' dispari e poi successivamente il numero binario che si desidera:\t");
-gets(n);
+char *n = argv[1];
 
 int ok = controllo(n);
 
