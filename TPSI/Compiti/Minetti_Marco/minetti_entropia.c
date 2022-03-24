@@ -2,9 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
-
 #define N 20
-
 void main () {
     char vett[N];
     int l;
@@ -12,8 +10,7 @@ void main () {
     scanf("%s", vett);
     l = strlen(vett);
     int v = 0, var = 1, j, i;
-    float lun;
-    float tot=0.0, prod;
+    float t, tot=0, prod;
     for ( j = 0; j < l; j++) {       // leggo la stringa
         v=0;                            // resetto le variabili
         var=1;
@@ -25,9 +22,10 @@ void main () {
                     }
                 }
                 prod=(float)var/l;                      //faccio il prodotto
-                lun= log(prod)*log(2);                //calcolo il log
-                tot = tot - lun;                           //calcolo la frequenza
+                l= log(prod)*log(2);                //calcolo il log
+                tot = tot - t;                           //calcolo la frequenza
                 v++;
+                printf("%f", prod);
             }
             else {
                 v=j+1;
@@ -37,4 +35,3 @@ void main () {
     printf("%s", vett);
     printf("\n-\n%f", tot);
 }
-
