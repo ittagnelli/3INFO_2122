@@ -58,7 +58,7 @@ int main(int argc ,char *argv[]) {
 	char *up = argv[1];
 	for (int i = 0; i < 15; i++) 
 		up[i] = toupper(up[i]);
-	if ( strlen( argv[1] ) < 15) {
+	if ( strlen( argv[1] ) != 15) {
 		printf("Il codice fiscale inserito ha meno di 15 caratteri, avviare nuovamente il programma e assicurarsi di inserire 15 caratteri");
 		exit(1);
 	}
