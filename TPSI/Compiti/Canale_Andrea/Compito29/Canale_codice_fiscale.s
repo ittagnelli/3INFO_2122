@@ -478,7 +478,10 @@ intoarr:
 	.section .rdata,"dr"
 	.align 8
 .LC1:
-	.ascii "Il codice fiscale inserito ha meno di 15 caratteri, avviare nuovamente il programma e assicurarsi di inserire 15 caratteri\0"
+	.ascii "Usage: ./Canale_codice_fiscale <codice fiscale di 15 caratteri>\0"
+	.align 8
+.LC2:
+	.ascii "Il codice fiscale inserito ha meno di 15 caratteri o di pi\371, avviare nuovamente il programma e assicurarsi di inserire 15 caratteri\0"
 	.text
 	.globl	main
 	.def	main;	.scl	2;	.type	32;	.endef
@@ -494,12 +497,33 @@ main:
 	movl	%ecx, 16(%rbp)
 	movq	%rdx, 24(%rbp)
 	call	__main
+	cmpl	$2, 16(%rbp)
+	je	.L26
+	leaq	.LC1(%rip), %rax
+	movq	%rax, %rcx
+	call	printf
+	movl	$1, %ecx
+	call	exit
+.L26:
+	movq	24(%rbp), %rax
+	addq	$8, %rax
+	movq	(%rax), %rax
+	movq	%rax, %rcx
+	call	strlen
+	cmpq	$15, %rax
+	je	.L27
+	leaq	.LC2(%rip), %rax
+	movq	%rax, %rcx
+	call	printf
+	movl	$1, %ecx
+	call	exit
+.L27:
 	movq	24(%rbp), %rax
 	movq	8(%rax), %rax
 	movq	%rax, -16(%rbp)
 	movl	$0, -4(%rbp)
-	jmp	.L26
-.L27:
+	jmp	.L28
+.L29:
 	movl	-4(%rbp), %eax
 	movslq	%eax, %rdx
 	movq	-16(%rbp), %rax
@@ -516,22 +540,9 @@ main:
 	addq	%rcx, %rax
 	movb	%dl, (%rax)
 	addl	$1, -4(%rbp)
-.L26:
-	cmpl	$14, -4(%rbp)
-	jle	.L27
-	movq	24(%rbp), %rax
-	addq	$8, %rax
-	movq	(%rax), %rax
-	movq	%rax, %rcx
-	call	strlen
-	cmpq	$15, %rax
-	je	.L28
-	leaq	.LC1(%rip), %rax
-	movq	%rax, %rcx
-	call	printf
-	movl	$1, %ecx
-	call	exit
 .L28:
+	cmpl	$14, -4(%rbp)
+	jle	.L29
 	call	paridisp
 	movq	-16(%rbp), %rax
 	movq	%rax, %rcx

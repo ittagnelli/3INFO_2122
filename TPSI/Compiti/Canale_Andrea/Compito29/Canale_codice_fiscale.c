@@ -55,13 +55,19 @@ void intoarr(char up[]) {
 }
 int main(int argc ,char *argv[]) {
 
-	char *up = argv[1];
-	for (int i = 0; i < 15; i++) 
-		up[i] = toupper(up[i]);
-	if ( strlen( argv[1] ) != 15) {
-		printf("Il codice fiscale inserito ha meno di 15 caratteri, avviare nuovamente il programma e assicurarsi di inserire 15 caratteri");
+
+	if (argc != 2) {
+		printf("Usage: ./Canale_codice_fiscale <codice fiscale di 15 caratteri>");
 		exit(1);
 	}
+	if ( strlen( argv[1] ) != 15) {
+		printf("Il codice fiscale inserito ha meno di 15 caratteri o di più, avviare nuovamente il programma e assicurarsi di inserire 15 caratteri");
+		exit(1);
+	}
+	char* up = argv[1];
+	for (int i = 0; i < 15; i++)
+		up[i] = toupper(up[i]);
+
 	paridisp();
 
 	intoarr(up);
