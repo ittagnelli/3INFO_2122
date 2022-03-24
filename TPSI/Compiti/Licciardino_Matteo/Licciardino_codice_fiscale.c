@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void main()
+int main()
 {
     char parola[16];
     int s=0; // la variabile somma
@@ -71,4 +71,5 @@ void main()
     printf("la lettera di controllo per questo codice fiscale e\': %s\n", parola);
     printf("E\' %c\n", lettere[numero_di_controllo_finale]);
     printf("Il codice fiscale e\': %s%c", parola, lettere[numero_di_controllo_finale]);
+    return(1);
 }
