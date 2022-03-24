@@ -7,7 +7,7 @@ void main()
     int i=0;
     int bit=0;
     int lungh;
-    int vet[n];
+    char vet[n];
     printf("Inserire una serire di 0 e 1: ");
     scanf("%s", vet);
     lungh=strlen(vet);
