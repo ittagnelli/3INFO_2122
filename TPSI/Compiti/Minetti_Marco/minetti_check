@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define l 15
+
+void main()  {
+    int vet[l], j=0, pari[l], f=0, dispari[l], i, s=0, check;
+    char caracter[l];
+    for(i=0;i<l;i++)
+    {
+        printf("Inserire stringa\n");
+        scanf("%c", &caracter[i]);
+        printf("Inserire il valore di %c\n", caracter[i]);
+        scanf("%d", &vet[i]);
+        s=s+vet[i];
+        if(i%2==0)
+        {
+            pari[j]=vet[i];
+            j++;
+        }
+        else
+        {
+            dispari[f]=vet[i];
+            f++;
+        }
+    }
+    printf("i pari sono: \n");
+    for( i = 0; i < j; i++) {
+        printf("%d\t", pari[i]);
+    }
+    printf("i dispari sono: \n");
+    for( i = 0; i < j; i++) {
+        printf("%d\t", dispari[i]);
+    }
+    check=s/26;
+    printf("Il check digit e': %d", check);
+}
