@@ -57,7 +57,7 @@ int main()
     }
   resto=somma%26;
 
-  for(int i=0; i<strlen(numeri_pari); i++)
+  for(int i=0; i<36; i++)
     {
       if(numeri_pari[i]==resto)
       {
