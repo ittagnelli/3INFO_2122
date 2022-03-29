@@ -79,7 +79,7 @@ int main(int argc, char *argv[]) {
         exit(1);
     }
 
-    printf("Il carattere di controllo per il codice fiscale %s è %c\n", argv[1], compute_check_digit(argv[1]));
+    printf("Il carattere di controllo per il codice fiscale %s e' %c\n", argv[1], compute_check_digit(argv[1]));
 
     return 0;
 }
